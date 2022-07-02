@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Level4 : MonoBehaviour{
-	public AudioSource HardPlayer;
+	public AudioSource AudioControllerSource;
+	public AudioClip HardModeClip,DirectionClip;
 	void Start(){
 		// Script :v //
 
@@ -158,22 +159,19 @@ public class Level4 : MonoBehaviour{
 
 		Invoke("End", 184.5f);
 
-		StartCoroutine(HardMode(120f));
+		Invoke("HardMode",120f);
 	}
 	void End(){
 		Spawner.Polygon = "END";
 		Spawner.CanSpawn = false;
 	}
-	void HardMode(){
-		HardPlayer.Play();
-	}
-		private void Spiral(){
+	private void Spiral(){
 		Spawner.isSpiral = !Spawner.isSpiral;
 	}
-		private void Random(){
+	private void Random(){
 		Spawner.isRandom = !Spawner.isRandom;
 	}
-		private void Open(){
+	private void Open(){
 		Spawner.isOpen = !Spawner.isOpen;
 	}
 	private void RandomRotation(){
@@ -190,8 +188,13 @@ public class Level4 : MonoBehaviour{
 	}
 	private void PlayerDirection(){
 		Player.Direction = -Player.Direction;
-		Camera.current.GetComponent<AudioController>().DirectionAudio();
+		AudioControllerSource.clip = DirectionClip;
+		AudioControllerSource.Play();
 		Direction();
+	}
+	private void HardMode(){
+		AudioControllerSource.clip = HardModeClip;
+		AudioControllerSource.Play();
 	}
 	IEnumerator CameraRotation(float time, float speed){
 		yield return new WaitForSeconds(time);
@@ -221,9 +224,5 @@ public class Level4 : MonoBehaviour{
 	IEnumerator Color2(float time, int R, int G, int B){
 		yield return new WaitForSeconds(time);
 		BG.Color2 = new Color(R / 255f, G / 255f, B / 255f);
-	}
-	IEnumerator HardMode(float time){
-		yield return new WaitForSeconds(time);
-		Camera.current.GetComponent<AudioController>().HardModeAudio();
 	}
 }
