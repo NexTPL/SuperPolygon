@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class TEST : MonoBehaviour{
+	public AudioSource AudioControllerSource;
+	public AudioClip HardModeClip,DirectionClip;
 	void Start(){
 		// Script :v //
 
