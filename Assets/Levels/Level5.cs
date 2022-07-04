@@ -21,6 +21,7 @@ public class Level5 : MonoBehaviour{
 		// Saneron ;) //
 
 		// Polygons //
+		Invoke("Open", 0f);
 		StartCoroutine(PolygonChange(0f, "6"));
 		StartCoroutine(PolygonChange(16.5f, "6"));
 		StartCoroutine(PolygonChange(23.5f, "4"));
@@ -35,30 +36,43 @@ public class Level5 : MonoBehaviour{
 		Invoke("PlayerDirection", 91.3f);
 		Invoke("PlayerDirection", 98.8f);
 		Invoke("PlayerDirection", 106f);
-		StartCoroutine(PolygonChange(111.5f, "6R"));
+		StartCoroutine(PolygonChange(111.5f, "6"));
+		Invoke("Random", 112.5f);
 		Invoke("Direction", 121f);
-		StartCoroutine(PolygonChange(126f, "5R"));
+		StartCoroutine(PolygonChange(126f, "5"));
 		Invoke("PlayerDirection", 128f);
 		Invoke("Direction", 135.7f);
 		Invoke("Direction", 143.2f);
-		StartCoroutine(PolygonChange(141.2f, "8S"));
+		StartCoroutine(PolygonChange(141.2f, "8"));
+		Invoke("Spiral", 142.2f);
+		Invoke("Open", 142.2f);
 		Invoke("SpiralRandomChange", 143.2f);
 		StartCoroutine(PolygonChange(155.8f, "6"));
+		Invoke("Spiral", 156.8f);
+		Invoke("Open", 156.8f);
+		Invoke("Random", 156.8f);
 		Invoke("PlayerDirection", 157.8f);
 
-		StartCoroutine(PolygonChange(170.5f, "8R"));
-		StartCoroutine(PolygonChange(178f, "6R"));
+		StartCoroutine(PolygonChange(170.5f, "8"));
+		Invoke("Random", 171.5f);
+		StartCoroutine(PolygonChange(178f, "6"));
 		Invoke("RandomRotation", 185f);
-		StartCoroutine(PolygonChange(185f, "5S"));
+		StartCoroutine(PolygonChange(185f, "5"));
+		Invoke("Spiral", 186f);
+		Invoke("Open", 186f);
 		Invoke("SpiralRandomChange", 187f);
 		Invoke("SpiralDirectionChange", 194.7f);
 		Invoke("SpiralDirectionChange", 200f);
 		Invoke("PlayerDirection", 187f);
 		Invoke("Direction", 194.7f);
 		StartCoroutine(PolygonChange(200f, "4"));
+		Invoke("Spiral", 201f);
+		Invoke("Open", 201f);
+		Invoke("Random", 201f);
 		Invoke("RandomRotation", 202f);
 		Invoke("PlayerDirection", 202f);
 		StartCoroutine(PolygonChange(215f, "6"));
+		Invoke("Random", 216f);
 		Invoke("PlayerDirection", 217f);
 
 

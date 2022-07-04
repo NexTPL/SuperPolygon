@@ -10,7 +10,7 @@ public class Level3 : MonoBehaviour{
 
 		GameCamera.Rotation = 25;
 		Score.LVLID = "L3";
-		Score.LVLEND = 198;
+		Score.LVLEND = 199;
 		Polygon.ShrinkSpeed = 1.6f;
 		Spawner.RandomRotation = false;
 		Player.Direction = 1;
@@ -23,30 +23,47 @@ public class Level3 : MonoBehaviour{
 		//Polygons//
 
 		StartCoroutine(PolygonChange(0f, "5"));
-		StartCoroutine(PolygonChange(16f, "5R"));
+		Invoke("Open", 0f);
+		Invoke("Random", 16f);
 		StartCoroutine(PolygonChange(29f, "4"));
-		StartCoroutine(PolygonChange(42.5f, "6R"));
-		StartCoroutine(PolygonChange(59.5f, "8S"));
+		Invoke("Random", 29f);
+		StartCoroutine(PolygonChange(42.5f, "6"));
+		Invoke("Random", 44.5f);
+		StartCoroutine(PolygonChange(59.5f, "8"));
+		Invoke("Open", 61f);
+		Invoke("Spiral", 61f);
 		Invoke("SpiralRandomChange", 61f);
-		StartCoroutine(PolygonChange(72.3f, "6S"));
+		StartCoroutine(PolygonChange(72.3f, "6"));
 		Invoke("SpiralRandomChange", 87.5f);
+		Invoke("Random", 87.5f);
 		Invoke("SpiralDirectionChange", 91f);
 		Invoke("SpiralDirectionChange", 94.5f);
 		Invoke("SpiralDirectionChange", 97.8f);
-		StartCoroutine(PolygonChange(99f, "8R"));
-		StartCoroutine(PolygonChange(112f, "4S"));
-		Invoke("SpiralRandomChange", 114f);
+		StartCoroutine(PolygonChange(99f, "8"));
+		Invoke("Random", 100.5f);
+		Invoke("Open", 100.5f);
+		Invoke("Spiral", 100.5f);
+		StartCoroutine(PolygonChange(112f, "4"));
+		Invoke("Spiral", 113.5f);
+		Invoke("Open", 113.5f);
+		Invoke("SpiralRandomChange", 113.5f);
 		//HARDMODE//
 		StartCoroutine(PolygonChange(125.3f, "5"));
-		StartCoroutine(PolygonChange(143.3f, "6R"));
-		StartCoroutine(PolygonChange(156.7f, "4R"));
-		StartCoroutine(PolygonChange(170f, "6S"));
-		StartCoroutine(PolygonChange(183f, "8S"));
+		Invoke("Open", 126.3f);
+		Invoke("Spiral", 126.3f);
+		StartCoroutine(PolygonChange(143.3f, "6"));
+		Invoke("Random", 144.5f);
+		StartCoroutine(PolygonChange(156.7f, "4"));
+		StartCoroutine(PolygonChange(170f, "6"));
+		Invoke("Spiral", 171.5f);
+		Invoke("Open", 171.5f);
+		StartCoroutine(PolygonChange(183f, "8"));
 		Invoke("SpiralRandomChange", 184f);
 		Invoke("SpiralDirectionChange", 187.7f);
 		Invoke("SpiralDirectionChange", 189.3f);
 		Invoke("SpiralDirectionChange", 191f);
 		Invoke("SpiralDirectionChange", 194.3f);
+		Invoke("Spiral", 198.5f);
 
 
 		//ShrinkSpeed//

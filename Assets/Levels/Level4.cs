@@ -22,34 +22,50 @@ public class Level4 : MonoBehaviour{
 		// Saneron ;) //
 
 		// Polygons //
+		Invoke("Open", 0f);
 		Invoke("RandomRotation", 10f);
-		StartCoroutine(PolygonChange(11f, "5R"));
-		StartCoroutine(PolygonChange(17.2f, "5"));
-		StartCoroutine(PolygonChange(24.8f, "5R"));
+		StartCoroutine(PolygonChange(11f, "5"));
+		Invoke("Random", 12f);
+		Invoke("Random", 18.2f);
+		Invoke("Random", 25.8f);
 		StartCoroutine(PolygonChange(33.6f, "6"));
+		Invoke("Random", 34.6f);
 		Invoke("RandomRotation", 35.6f);
 		Invoke("RandomRotation", 41.8f);
-		StartCoroutine(PolygonChange(49.5f, "6R"));
+		Invoke("Random", 50.5f);
 		StartCoroutine(PolygonChange(62f, "5"));
-		StartCoroutine(PolygonChange(76.4f, "6S"));
+		Invoke("Random", 63f);
+		StartCoroutine(PolygonChange(76.4f, "6"));
+		Invoke("Spiral", 77.4f);
+		Invoke("Open", 77.4f);
 		Invoke("SpiralRandomChange", 78.4f);
 		StartCoroutine(PolygonChange(90.5f, "8"));
+		Invoke("Random", 91.5f);
+		Invoke("Spiral", 91.5f);
+		Invoke("Open", 91.5f);
 		StartCoroutine(PolygonChange(104.7f, "6"));
 		Invoke("RandomRotation", 104.7f);
 		Invoke("RandomRotation", 109f);
 		StartCoroutine(PolygonChange(111.5f, "5"));
 		Invoke("RandomRotation", 116.5f);
 		StartCoroutine(PolygonChange(119f, "4"));
+		//HARDMODE//
 		Invoke("RandomRotation", 135f);
-		StartCoroutine(PolygonChange(133f, "6R"));
+		StartCoroutine(PolygonChange(133f, "6"));
+		Invoke("Random", 134f);
 		StartCoroutine(PolygonChange(149f, "5"));
+		Invoke("Random", 150f);
 		Invoke("SpiralRandomChange", 163f);
-		StartCoroutine(PolygonChange(163.5f, "8S"));
+		StartCoroutine(PolygonChange(163.5f, "8"));
+		Invoke("Spiral", 164.5f);
+		Invoke("Open", 164.5f);
 		Invoke("SpiralDirectionChange", 168.5f);
 		Invoke("SpiralDirectionChange", 170f);
 		Invoke("SpiralRandomChange", 172f);
 		Invoke("SpiralRandomChange", 177f);
 		StartCoroutine(PolygonChange(177.8f, "6"));
+		Invoke("Spiral", 178.8f);
+		Invoke("Open", 178.8f);
 
 		
 
@@ -60,6 +76,7 @@ public class Level4 : MonoBehaviour{
 		StartCoroutine(ShrinkSpeed(78.4f, 1.55f));
 		StartCoroutine(ShrinkSpeed(92.5f, 1.65f));
 		StartCoroutine(ShrinkSpeed(104.7f, 1.9f));
+		//HARDMODE//
 		StartCoroutine(ShrinkSpeed(121f, 1.85f));
 		StartCoroutine(ShrinkSpeed(128f, 1.75f));
 		StartCoroutine(ShrinkSpeed(135f, 1.75f));
@@ -89,11 +106,12 @@ public class Level4 : MonoBehaviour{
 		StartCoroutine(SpiralSRate(78.4f, 0.3f));
 		StartCoroutine(SpawnRate(92f, 0.9f));
 		StartCoroutine(SpawnRate(104.7f, 0.75f));
-		StartCoroutine(SpawnRate(121f, 0.5f));
-		StartCoroutine(SpawnRate(128f, 0.6f));
-		StartCoroutine(SpawnRate(135f, 0.5f));
+		//HARDMODE//
+		StartCoroutine(SpawnRate(121f, 0.6f));
+		StartCoroutine(SpawnRate(128f, 0.55f));
+		StartCoroutine(SpawnRate(135f, 0.6f));
 		StartCoroutine(SpawnRate(148f, 1f));
-		StartCoroutine(SpawnRate(151f, 0.5f));
+		StartCoroutine(SpawnRate(151f, 0.55f));
 		StartCoroutine(SpiralSRate(165f, 0.15f));
 		StartCoroutine(SpiralSRate(172f, 0.2f));
 		StartCoroutine(SpawnRate(179.5f, 0.75f));
@@ -120,6 +138,7 @@ public class Level4 : MonoBehaviour{
 		StartCoroutine(CameraRotation(105.4f, 150f));
 		StartCoroutine(CameraRotation(105.9f, 180f));
 		StartCoroutine(CameraRotation(106.7f, 0f));
+		//HARDMODE//
 		StartCoroutine(CameraRotation(121f, 30f));
 		StartCoroutine(CameraRotation(128f, 75f));
 		StartCoroutine(CameraRotation(135f, 150f));
@@ -145,6 +164,7 @@ public class Level4 : MonoBehaviour{
 		Invoke("Direction", 85.4f);
 		Invoke("Direction", 92.5f);
 		Invoke("Direction", 99.7f);
+		//HARDMODE//
 		Invoke("Direction", 134.7f);
 		Invoke("Direction", 144f);
 		Invoke("Direction", 147.75f);
