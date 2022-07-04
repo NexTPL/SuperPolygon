@@ -20,23 +20,35 @@ public class Level2 : MonoBehaviour{
 
 		//Polygons//
 		StartCoroutine(PolygonChange(0f, "4"));
-		StartCoroutine(PolygonChange(28f, "6"));
-		StartCoroutine(PolygonChange(42f, "6R"));
-		StartCoroutine(PolygonChange(71f, "6S"));
+		Invoke("Open", 0f);
+		StartCoroutine(PolygonChange(29f, "6"));
+		Invoke("Random", 42f);
+		StartCoroutine(PolygonChange(71f, "6"));
+		Invoke("Spiral", 71f);
+		Invoke("Open", 71f);
 		Invoke("SpiralDirectionChange", 85.5f);
 		StartCoroutine(PolygonChange(94.9f, "4"));
-		StartCoroutine(PolygonChange(108f, "5R"));
+		Invoke("Random", 97f);
+		Invoke("Spiral", 97f);
+		Invoke("Open", 97f);
+		StartCoroutine(PolygonChange(108f, "5"));
+		Invoke("Random", 108f);
 		//HARD MODE//
-		StartCoroutine(PolygonChange(120.5f, "5"));
+		Invoke("Random", 120.5f);
 		StartCoroutine(PolygonChange(132.5f, "6"));
-		StartCoroutine(PolygonChange(144.5f, "6R"));
-		StartCoroutine(PolygonChange(157f, "6R"));
-		StartCoroutine(PolygonChange(170.5f, "8S"));
+		Invoke("Random", 144.5f);
+		//StartCoroutine(PolygonChange(157f, "6R"));//
+		StartCoroutine(PolygonChange(170.5f, "8"));
+		Invoke("Random", 170.5f);
+		Invoke("Spiral", 170.5f);
+		Invoke("Open", 170.5f);
 		Invoke("SpiralDirectionChange", 175.9f);
 		Invoke("SpiralDirectionChange", 178f);
 		Invoke("SpiralDirectionChange", 185f);
 		Invoke("SpiralDirectionChange", 188f);
 		Invoke("SpiralDirectionChange", 194f);
+		Invoke("Open", 197.2f);
+		Invoke("Spiral", 197.2f);
 		StartCoroutine(PolygonChange(195.2f, "6"));
 		
 
