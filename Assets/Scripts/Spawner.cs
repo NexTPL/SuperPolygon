@@ -13,7 +13,7 @@ public class Spawner : MonoBehaviour{
 	public Animator CenterAnim, BGAnim;
 	public static int S, AR, LP1, LP2;
 	private bool _idk = true;
-	private int BGShape, LastBGShape;
+	private int BGShape;
 	void Spawn(){
 		// Check if polygon is not changing
 		if (CanSpawn == true){
@@ -39,7 +39,6 @@ public class Spawner : MonoBehaviour{
 		}
 	}
 	void Start(){
-		LastBGShape = 4;
 		Polygon = "4";
 		CanSpawn = true;
 		SpawnRate = 0.9f;
@@ -71,11 +70,9 @@ public class Spawner : MonoBehaviour{
 			case "5": {BGShape=5; break; }
 			case "6": {BGShape=6; break; }
 			case "8": {BGShape=8; break; }
+			case "END": {BGShape=8; break; }
 		}
 		CenterAnim.SetInteger("Shape", BGShape);
 		BGAnim.SetInteger("Shape", BGShape);
-		if(BGShape != LastBGShape){
-			LastBGShape = BGShape;
-		}
 	}
 }

@@ -8,6 +8,7 @@ public class Polygon : MonoBehaviour{
 	int _deg,_sides,rot,fixdirection;
 	float a_deg = 0, offset;
 	private float dir;
+	private int Multiplayer;
 
 	void Start(){
 		switch (Spawner.Polygon){
@@ -18,6 +19,7 @@ public class Polygon : MonoBehaviour{
 		}
 
 		if(Spawner.isSpiral == true){
+			Multiplayer = 2;
 			if (Spawner.SpiralRandom == true){
 				rot = Random.Range(0, _sides);
 				while (rot == Spawner.LP1 || rot == Spawner.LP2){
@@ -39,6 +41,7 @@ public class Polygon : MonoBehaviour{
 			}
 		}
 		else{
+			Multiplayer = 1;
 			offset = Random.Range(0, 8);
 			isRotationEnabledOnStart = Spawner.RandomRotation;
 			Invoke("Rotate", Spawner.SpawnRate - 0.25f);
@@ -49,13 +52,9 @@ public class Polygon : MonoBehaviour{
 			Spawner.AR = Random.Range(0, 2);
 			switch (Spawner.Polygon){
 				case "4": { dir = 2; break; }
-				case "4R": { dir = 2; break; }
 				case "5": { dir = 1.6f; break; }
-				case "5R": { dir = 1.6f; break; }
 				case "6": { dir = 1.2f; break; }
-				case "6R": { dir = 1.2f; break; }
 				case "8": { dir = 1; break; }
-				case "8R": { dir = 1; break; }
 			}
 			if (Spawner.AR == 1){
 				dir = -dir;
@@ -74,7 +73,7 @@ public class Polygon : MonoBehaviour{
 			a_deg = _deg * fixdirection;
 		}
 		if(!Spawner.isSpiral) {transform.localRotation = Quaternion.Euler(0, 0, a_deg+(offset*_deg));}
-		transform.localScale -= Vector3.one * (ShrinkSpeed * Time.deltaTime);
+		transform.localScale -= Vector3.one * (ShrinkSpeed * Time.deltaTime * Multiplayer);
 		if (transform.localScale.x < 0.15f){
 			Destroy(gameObject);
 		}
