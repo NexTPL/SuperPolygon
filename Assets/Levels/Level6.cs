@@ -16,6 +16,7 @@ public class Level6 : MonoBehaviour{
 		Player.Direction = 1;
 		BG.Color1 = new Color(68/255f, 86/255f, 159/255f);
 		BG.Color2 = new Color(176/255f, 65/255f, 181/255f);
+		BG.Speed = 0.2f;
 
 
 		// Saneron ;) //
@@ -90,5 +91,9 @@ public class Level6 : MonoBehaviour{
 	IEnumerator Color2(float time, int R, int G, int B){
 		yield return new WaitForSeconds(time);
 		BG.Color2 = new Color(R / 255f, G / 255f, B / 255f);
+	}
+	IEnumerator BGSpeed(float time, float speed){
+		yield return new WaitForSeconds(time);
+		BG.Speed = speed;
 	}
 }

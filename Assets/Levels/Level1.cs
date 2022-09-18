@@ -16,6 +16,7 @@ public class Level1 : MonoBehaviour{
 		Player.Direction = 1;
 		BG.Color1 = new Color(255/255f, 50/255f, 5/255f);
 		BG.Color2 = new Color(255/255f, 130/255f, 10/255f);
+		BG.Speed = 0.2f;
 
 
 		//Polygons//
@@ -182,5 +183,9 @@ public class Level1 : MonoBehaviour{
 	IEnumerator Color2(float time, int R, int G, int B){
 		yield return new WaitForSeconds(time);
 		BG.Color2 = new Color(R / 255f, G / 255f, B / 255f);
+	}
+	IEnumerator BGSpeed(float time, float speed){
+		yield return new WaitForSeconds(time);
+		BG.Speed = speed;
 	}
 }

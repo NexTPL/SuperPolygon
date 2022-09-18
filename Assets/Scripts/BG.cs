@@ -7,15 +7,15 @@ public class BG : MonoBehaviour{
 	public static Color Color1, Color2;
 	Color lerpedColor;
 	public Material Mat1, Mat2, Mat3;
-	private float speed = 0.2f;
+	public static float Speed;
 	public Renderer Renderer;
 	private bool isT1;
 
 	private void Start(){
 		isT1 = true;
 	}
-	private void Update(){
-		lerpedColor = Color.Lerp(Color1, Color2, Mathf.PingPong(Time.time * speed, 1));
+	private void FixedUpdate(){
+		lerpedColor = Color.Lerp(Color1, Color2, Mathf.PingPong(Time.time * Speed, 1));
 		Mat1.SetColor("_EmissionColor", lerpedColor);
 		Mat1.SetColor("_Color", lerpedColor);
 		Mat2.SetColor("_EmissionColor", lerpedColor);

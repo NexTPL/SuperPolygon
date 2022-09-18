@@ -103,4 +103,8 @@ public class TEST : MonoBehaviour{
 		yield return new WaitForSeconds(time);
 		BG.Color2 = new Color(R / 255f, G / 255f, B / 255f);
 	}
+	IEnumerator BGSpeed(float time, float speed){
+		yield return new WaitForSeconds(time);
+		BG.Speed = speed;
+	}
 }

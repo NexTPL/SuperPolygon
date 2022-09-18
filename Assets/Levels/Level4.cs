@@ -16,6 +16,7 @@ public class Level4 : MonoBehaviour{
 		Player.Direction = 1;
 		BG.Color1 = new Color(0/255f, 130/255f, 245/255f);
 		BG.Color2 = new Color(113/255f, 40/255f, 255/255f);
+		BG.Speed = 0.2f;
 		
 
 
@@ -244,5 +245,9 @@ public class Level4 : MonoBehaviour{
 	IEnumerator Color2(float time, int R, int G, int B){
 		yield return new WaitForSeconds(time);
 		BG.Color2 = new Color(R / 255f, G / 255f, B / 255f);
+	}
+	IEnumerator BGSpeed(float time, float speed){
+		yield return new WaitForSeconds(time);
+		BG.Speed = speed;
 	}
 }
