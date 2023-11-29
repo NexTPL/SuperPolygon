@@ -523,7 +523,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 1
   m_SkinnedMotionVectors: 0
-  m_Mesh: {fileID: -8193265647220460210, guid: f223371e035170248b89f22c546c8e4b, type: 3}
+  m_Mesh: {fileID: -8193265647220460210, guid: e34958aba93797c46b66ed039e466f21, type: 3}
   m_Bones: []
   m_BlendShapeWeights:
   - 0
@@ -3097,23 +3097,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 4
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1694648033}
-          m_TargetAssemblyTypeName: Buttons, Assembly-CSharp
-          m_MethodName: LoadERROR
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 1
+  m_Delegates: []
 --- !u!114 &1694648033
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3487,7 +3471,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: v0.57
+  m_Text: v0.??
 --- !u!222 &1925083100
 CanvasRenderer:
   m_ObjectHideFlags: 0
