@@ -20,10 +20,22 @@ public class Level6 : MonoBehaviour{
 
 
 		// Saneron ;) //
-		StartCoroutine(PolygonChange(0f, "6"));
-		Invoke("Open", 10f);
-		Invoke("Random", 20f);
-		Invoke("Spiral", 30f);
+		StartCoroutine(PolygonChange(0f, "4"));
+			StartCoroutine(PolygonChange(14f, "5"));
+		StartCoroutine(PolygonChange(20f, "6"));
+		StartCoroutine(PolygonChange(26f, "8"));
+
+		StartCoroutine(Wall(6f, "add", 0));
+		StartCoroutine(Wall(12f, "rem"));
+		StartCoroutine(Wall(18f, "add", 0));
+		StartCoroutine(Wall(24f, "rem"));
+			StartCoroutine(Wall(30f, "add", 0));
+		StartCoroutine(Wall(36f, "rem"));
+
+
+		Invoke("Open", 5f);
+		Invoke("Random", 5f);
+		// Invoke("Spiral", 30f);
 
 
 		Invoke("End", 232f);
@@ -83,6 +95,14 @@ public class Level6 : MonoBehaviour{
 		yield return new WaitForSeconds(time);
 		Spawner.Polygon = polygon;
 		Spawner.CanSpawn = false;
+	}
+	IEnumerator Wall(float time, string method, int pos = 0){
+		yield return new WaitForSeconds(time);
+		switch(method){
+			case "add": {Spawner.addWall = true; Spawner.WallPos = pos; break;}
+			case "rem": {Spawner.remWall = true; break;}
+			default: {break;}
+		}
 	}
 	IEnumerator Color1(float time, int R, int G, int B){
 		yield return new WaitForSeconds(time);

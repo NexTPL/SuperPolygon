@@ -6,30 +6,41 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour{
 	public GameObject Polygon8F, Polygon4, Polygon5, Polygon6, Polygon8;
+	public GameObject Polygon4W, Polygon5W, Polygon6W, Polygon8W;
 	public static string Polygon;
 	public static float SpawnRate, SpiralSpawnRate;
 	public static int SpiralDirection;
-	public static bool SpiralRandom, RandomRotation, CanSpawn, isOpen, isSpiral, isRandom;
+	public static int WallPos = -1;
+	public static bool SpiralRandom, RandomRotation, CanSpawn, isOpen, isSpiral, isRandom, addWall, remWall;
 	public Animator CenterAnim, BGAnim;
 	public static int S, AR, LP1, LP2;
 	private bool _idk = true;
 	private int BGShape;
+
 	void Spawn(){
 		// Check if polygon is not changing
-		if (CanSpawn == true){
-			// Spawn polygon
-			switch (Polygon){
-				case "4": { Instantiate(Polygon4, Vector3.zero, Quaternion.identity); break; }
-				case "5": { Instantiate(Polygon5, Vector3.zero, Quaternion.identity); break; }
-				case "6": { Instantiate(Polygon6, Vector3.zero, Quaternion.identity); break; }
-				case "8": { Instantiate(Polygon8, Vector3.zero, Quaternion.identity); break; }
-				case "END": { Instantiate(Polygon8F, Vector3.zero, Quaternion.identity); break; }
+		if (CanSpawn){
+			if(addWall){
+				switch (Polygon){
+					case "4": { Instantiate(Polygon4W, Vector3.zero, Quaternion.identity); break; }
+					case "5": { Instantiate(Polygon5W, Vector3.zero, Quaternion.identity); break; }
+					case "6": { Instantiate(Polygon6W, Vector3.zero, Quaternion.identity); break; }
+					case "8": { Instantiate(Polygon8W, Vector3.zero, Quaternion.identity); break; }
+				}
+				addWall = false;
+			}
+			else{
+				// Spawn polygon
+				switch (Polygon){
+					case "4": { Instantiate(Polygon4, Vector3.zero, Quaternion.identity); break; }
+					case "5": { Instantiate(Polygon5, Vector3.zero, Quaternion.identity); break; }
+					case "6": { Instantiate(Polygon6, Vector3.zero, Quaternion.identity); break; }
+					case "8": { Instantiate(Polygon8, Vector3.zero, Quaternion.identity); break; }
+					case "END": { Instantiate(Polygon8F, Vector3.zero, Quaternion.identity); break; }
+				}
 			}
 		}
-		// Run loop function
-		SpawnTimer();
-	}
-	void SpawnTimer(){
+
 		// Check polygon type and set delay
 		if (isSpiral){
 			Invoke("Spawn", SpiralSpawnRate);
@@ -38,6 +49,9 @@ public class Spawner : MonoBehaviour{
 			Invoke("Spawn", SpawnRate);
 		}
 	}
+
+
+
 	void Start(){
 		Polygon = "4";
 		CanSpawn = true;

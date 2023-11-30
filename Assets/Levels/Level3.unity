@@ -311,6 +311,10 @@ MonoBehaviour:
     type: 3}
   Polygon8: {fileID: 6399944863427058098, guid: 7cf731e1984c5524788465483c1e0ded,
     type: 3}
+  Polygon4W: {fileID: 0}
+  Polygon5W: {fileID: 0}
+  Polygon6W: {fileID: 0}
+  Polygon8W: {fileID: 0}
   CenterAnim: {fileID: 1891382158}
   BGAnim: {fileID: 2268508563886663362}
 --- !u!20 &519420031
@@ -1458,7 +1462,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 1
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 6828610933306433306, guid: f509fdcf36b47a34e95334125c447f77, type: 3}
+  m_Mesh: {fileID: 6828610933306433306, guid: 6f5bae290aac8104996cf852885b5cb2, type: 3}
   m_Bones: []
   m_BlendShapeWeights:
   - 0

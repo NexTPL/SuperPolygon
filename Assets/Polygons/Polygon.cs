@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Polygon : MonoBehaviour{
 	public static float ShrinkSpeed;
-	private bool isRotationEnabledOnStart;
 	int _deg,_sides,rot,fixdirection;
-	float a_deg = 0, offset;
+	float a_deg = 0;
+	public int offset;
 	private float dir;
 	private int Multiplayer;
 
@@ -42,13 +42,19 @@ public class Polygon : MonoBehaviour{
 		}
 		else{
 			Multiplayer = 1;
-			offset = Random.Range(0, 8);
-			isRotationEnabledOnStart = Spawner.RandomRotation;
-			Invoke("Rotate", Spawner.SpawnRate - 0.25f);
+			while(true){
+				offset = Random.Range(0, _sides);
+				if(offset != Spawner.WallPos){
+					break;
+				}
+			}
+			
+			if (Spawner.RandomRotation){
+				Invoke("Rotate", Spawner.SpawnRate - 0.25f);
+			}
 		}
 	}
 	private void Rotate(){
-		if (isRotationEnabledOnStart == true){
 			Spawner.AR = Random.Range(0, 2);
 			switch (Spawner.Polygon){
 				case "4": { dir = 2; break; }
@@ -63,10 +69,9 @@ public class Polygon : MonoBehaviour{
 			else{
 				fixdirection = 1;
 			}
-		}
 	}
 	void FixedUpdate(){
-		if (isRotationEnabledOnStart == true && Mathf.Abs(a_deg) < _deg){
+		if (Spawner.RandomRotation && Mathf.Abs(a_deg) < _deg){
 			a_deg += dir;
 		}
 		if (Mathf.Abs(a_deg) > _deg){
