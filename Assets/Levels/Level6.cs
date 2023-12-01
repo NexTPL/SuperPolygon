@@ -20,17 +20,12 @@ public class Level6 : MonoBehaviour{
 
 
 		// Saneron ;) //
-		StartCoroutine(PolygonChange(0f, "4"));
-			StartCoroutine(PolygonChange(14f, "5"));
-		StartCoroutine(PolygonChange(20f, "6"));
-		StartCoroutine(PolygonChange(26f, "8"));
-
+		StartCoroutine(PolygonChange(0f, "8"));
 		StartCoroutine(Wall(6f, "add", 0));
 		StartCoroutine(Wall(12f, "rem"));
-		StartCoroutine(Wall(18f, "add", 0));
-		StartCoroutine(Wall(24f, "rem"));
-			StartCoroutine(Wall(30f, "add", 0));
-		StartCoroutine(Wall(36f, "rem"));
+		StartCoroutine(Wall(12f, "add", 4));
+		StartCoroutine(Wall(18f, "rem"));
+		StartCoroutine(Wall(18f, "add", 7));
 
 
 		Invoke("Open", 5f);
@@ -100,7 +95,7 @@ public class Level6 : MonoBehaviour{
 		yield return new WaitForSeconds(time);
 		switch(method){
 			case "add": {Spawner.addWall = true; Spawner.WallPos = pos; break;}
-			case "rem": {Spawner.remWall = true; break;}
+			case "rem": {Spawner.remWall = true; Spawner.WallPos = -1; break;}
 			default: {break;}
 		}
 	}

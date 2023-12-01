@@ -21,7 +21,6 @@ public class Wall : MonoBehaviour
 			transform.localScale -= Vector3.one * (Polygon.ShrinkSpeed * Time.deltaTime * (4/2.8f));
 			if (transform.localScale.x < 0.01f){
 				Spawner.remWall = false;
-				Spawner.WallPos = -1;
 				Destroy(gameObject);
 			}
 		}

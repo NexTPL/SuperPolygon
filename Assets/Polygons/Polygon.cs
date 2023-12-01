@@ -77,7 +77,7 @@ public class Polygon : MonoBehaviour{
 		if (Mathf.Abs(a_deg) > _deg){
 			a_deg = _deg * fixdirection;
 		}
-		if(!Spawner.isSpiral) {transform.localRotation = Quaternion.Euler(0, 0, a_deg+(offset*_deg));}
+		if(!Spawner.isSpiral || !Spawner.isRandom) {transform.localRotation = Quaternion.Euler(0, 0, a_deg+(offset*_deg));}
 		transform.localScale -= Vector3.one * (ShrinkSpeed * Time.deltaTime * Multiplayer);
 		if (transform.localScale.x < 0.15f){
 			Destroy(gameObject);
