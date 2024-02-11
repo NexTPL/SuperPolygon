@@ -10,32 +10,77 @@ public class Level1 : MonoBehaviour{
 
 		GameCamera.Rotation = 20;
 		Score.LVLID = "L1";
-		Score.LVLEND = 200;
+		Score.LVLEND = 198;
 		Polygon.ShrinkSpeed = 1.4f;
 		Spawner.RandomRotation = false;
 		Player.Direction = 1;
-		BG.Color1 = new Color(255/255f, 50/255f, 5/255f);
-		BG.Color2 = new Color(255/255f, 130/255f, 10/255f);
-		BG.Speed = 0.2f;
+		BG.Color1 = new Color(200/255f, 51/255f, 0/255f);
+		BG.Color2 = new Color(255/255f, 149/255f, 0/255f);
+		BG.Speed = 0.001f;
+
+		//BG Speed//
+		StartCoroutine(BGSpeed(14.3f, 0.3f));
+		StartCoroutine(BGSpeed(28.5f, 0.2f));
+		StartCoroutine(BGSpeed(32f, 1f));
+		StartCoroutine(BGSpeed(33f, 0.25f));
+		StartCoroutine(BGSpeed(83.5f, 0.25f));
+		StartCoroutine(BGSpeed(111f, 4f));
+		StartCoroutine(BGSpeed(112.2f, 0.25f));
+		StartCoroutine(BGSpeed(140.5f, 0.5f));
+		StartCoroutine(BGSpeed(155f, 0.75f));
+		StartCoroutine(BGSpeed(187.5f, 0.5f));
+
+		//BG Color//
+		StartCoroutine(Color1(28.5f, 20, 0, 0));
+		StartCoroutine(Color1(33f, 200, 51, 0));
+
+		StartCoroutine(Color1(46f, 255, 82, 0));
+		StartCoroutine(Color2(46f, 255, 142, 0));
+
+		StartCoroutine(Color1(82f, 158, 0, 0));
+		StartCoroutine(Color2(82f, 168, 98, 0));
+
+		StartCoroutine(Color1(112.2f, 200, 0, 0));
+		StartCoroutine(Color2(112.2f, 200, 116, 0));
+
+		StartCoroutine(Color1(126.5f, 200, 5, 5));
+		StartCoroutine(Color2(126.5f, 200, 106, 30));
+
+		StartCoroutine(Color1(140.5f, 220, 10, 10));
+		StartCoroutine(Color2(140.5f, 180, 10, 10));
+
+		StartCoroutine(Color1(183.5f, 200, 51, 0));
+		StartCoroutine(Color2(183.5f, 209, 122, 0));
+
+
 
 
 		//Polygons//
-		StartCoroutine(PolygonChange(30f, "5R"));
-		StartCoroutine(PolygonChange(44f, "5"));
-		StartCoroutine(PolygonChange(58f, "6R"));
-		StartCoroutine(PolygonChange(71.5f, "6"));
+		Invoke("Open", 0f);
+		StartCoroutine(PolygonChange(30f, "5"));
+		Invoke("Random", 30f);
+		Invoke("Random", 44f);
+		StartCoroutine(PolygonChange(58.5f, "6"));
+		Invoke("Random", 58f);
+		Invoke("Random", 71.5f);
 		StartCoroutine(PolygonChange(81f, "4"));
-		StartCoroutine(PolygonChange(95.5f, "4R"));
+		Invoke("Random", 96.5f);
+		StartCoroutine(PolygonChange(96f, "5"));
+		StartCoroutine(PolygonChange(110f, "6"));
 		//HARD MODE//
-		StartCoroutine(PolygonChange(124f, "8R"));
-		StartCoroutine(PolygonChange(138f, "8"));
-		StartCoroutine(PolygonChange(152.6f, "5R"));
-		StartCoroutine(PolygonChange(167f, "4R"));
-		StartCoroutine(PolygonChange(181f, "6"));
+		StartCoroutine(PolygonChange(124f, "8"));
+		Invoke("Random", 138f);
+		StartCoroutine(PolygonChange(138.25f, "8"));
+		Invoke("Random", 154f);
+		StartCoroutine(PolygonChange(152f, "5"));
+		StartCoroutine(PolygonChange(167f, "4"));
+		Invoke("Random", 182f);
+		StartCoroutine(PolygonChange(181.5f, "6"));
 
 
 		//ShrinkSpeed//
 		StartCoroutine(ShrinkSpeed(7f, 1.45f));
+		StartCoroutine(ShrinkSpeed(14.3f, 1.53f));
 		StartCoroutine(ShrinkSpeed(39.5f, 1.6f));
 		StartCoroutine(ShrinkSpeed(44.5f, 1.5f));
 		StartCoroutine(ShrinkSpeed(61f, 1.6f));
@@ -44,41 +89,56 @@ public class Level1 : MonoBehaviour{
 		StartCoroutine(ShrinkSpeed(98f, 1.4f));
 		StartCoroutine(ShrinkSpeed(112f, 1.5f));
 		//HARD MODE//
-		StartCoroutine(ShrinkSpeed(126f, 1.6f));
-		StartCoroutine(ShrinkSpeed(141f, 1.7f));
-		StartCoroutine(ShrinkSpeed(169f, 1.85f));
-		StartCoroutine(ShrinkSpeed(183f, 1.5f));
-		StartCoroutine(ShrinkSpeed(198f, 1f));
+		StartCoroutine(ShrinkSpeed(126f, 1.7f));
+		StartCoroutine(ShrinkSpeed(141f, 1.3f));
+		StartCoroutine(ShrinkSpeed(169f, 1.7f));
+		StartCoroutine(ShrinkSpeed(183f, 1.6f));
+		StartCoroutine(ShrinkSpeed(197f, 1f));
 
 
 		//spiral 0.2, polygons 0.9
 		// up = -, down = +
 		//SpawnRate//
-		StartCoroutine(SpawnRate(32f, 1f));
-		StartCoroutine(SpawnRate(32f, 0.95f));
+		StartCoroutine(SpawnRate(0f, 1.1f));
+		StartCoroutine(SpawnRate(26f, 4f));
+		StartCoroutine(SpawnRate(30f, 0.95f));
+		StartCoroutine(SpawnRate(41.5f, 4f));
+		StartCoroutine(SpawnRate(45.5f, 0.95f));
 		StartCoroutine(SpawnRate(61f, 0.9f));
-		StartCoroutine(SpawnRate(68f, 1f));
+		StartCoroutine(SpawnRate(70f, 2f));
+		StartCoroutine(SpawnRate(72f, 0.75f));
+		StartCoroutine(SpawnRate(73.5f, 0.9f));
 		StartCoroutine(SpawnRate(83f, 0.95f));
 		StartCoroutine(SpawnRate(98f, 1f));
 		StartCoroutine(SpawnRate(112f, 1.1f));
 		//HARD MODE//
-		StartCoroutine(SpawnRate(123f, 1f));
-		StartCoroutine(SpawnRate(140.3f, 0.9f));
+		StartCoroutine(SpawnRate(123f, 1.2f));
+		StartCoroutine(SpawnRate(140.3f, 1.5f));
 		StartCoroutine(SpawnRate(154.6f, 0.8f));
 		StartCoroutine(SpawnRate(169f, 0.7f));
 		StartCoroutine(SpawnRate(183f, 1.1f));
+		StartCoroutine(SpawnRate(197f, 2f));
 
 
 		//CameraRotation//
-		StartCoroutine(CameraRotation(14f, 35f));
+		StartCoroutine(CameraRotation(14.3f, 35f));
 		StartCoroutine(CameraRotation(28.5f, 5f));
 		StartCoroutine(CameraRotation(32f, 40f));
 		StartCoroutine(CameraRotation(39f, 50f));
 		StartCoroutine(CameraRotation(39.3f, 60f));
 		StartCoroutine(CameraRotation(44.5f, 30f));
 		StartCoroutine(CameraRotation(46.2f, 50f));
-		StartCoroutine(CameraRotation(60.7f, 60f));
-		StartCoroutine(CameraRotation(67.8f, 35f));
+
+		StartCoroutine(CameraRotation(58f, 60f));
+		StartCoroutine(CameraRotation(58.2f, 70f));
+		StartCoroutine(CameraRotation(58.4f, 80f));
+		StartCoroutine(CameraRotation(58.6f, 90f));
+		StartCoroutine(CameraRotation(58.8f, 100f));
+		StartCoroutine(CameraRotation(59f, 110f));
+
+		StartCoroutine(CameraRotation(60.7f, 70f));
+		StartCoroutine(CameraRotation(67.8f, 45f));
+
 		StartCoroutine(CameraRotation(82f, 20f));
 		StartCoroutine(CameraRotation(90.7f, 5f));
 		StartCoroutine(CameraRotation(97.8f, 35f));
@@ -116,7 +176,7 @@ public class Level1 : MonoBehaviour{
 		Invoke("Direction", 183.2f);
 
 
-		Invoke("End", 196);
+		Invoke("End", 195);
 
 		Invoke("HardMode",125.3f);
 	}
